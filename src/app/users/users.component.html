@@ -1,0 +1,40 @@
+<h2 class="text-center">List Of Users</h2>
+<div *ngIf="users;else err" class="container user-table">
+
+    <div class="headers">
+     <h2 class="table-title text-center">Users</h2>
+     <!-- <button class="btn add" (click)="openForm()">Addproduct</button> -->
+    </div>
+
+  <table class="table">
+    <thead>
+         <tr>
+           <th>userId</th>
+           <th>name</th>
+           <th>username</th>
+           <th>password</th>
+           <th>address</th>
+           <th>mobileNo</th>
+           <th></th>
+           <th></th>
+         </tr>
+    </thead>
+    <tbody class="text-center">
+
+         <tr *ngFor="let userd of users">
+
+            <td>{{userd['userId']}}</td>
+            <td>{{userd['name']}}</td>
+            <td>{{userd['username']}}</td>
+            <td>{{userd['password']}}</td>
+            <td>{{userd['address']}}</td>
+            <td>{{userd['mobileNo']}}</td>
+            
+         </tr>
+    </tbody>
+  </table>
+  </div>
+  <ng-template #err >
+    <p class="text-danger">Error fetching data from backend</p>
+    </ng-template>
+    

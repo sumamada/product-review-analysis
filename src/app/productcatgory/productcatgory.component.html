@@ -1,0 +1,75 @@
+<h2 class="text-center mt-2" style="color: navy;">product-category works!</h2>
+
+<div *ngIf="products;else err" class="container prod-table">
+
+ 
+
+    <div>
+
+        <label for="categorySelect">Search By category</label>
+
+        <input type="text" id="categorySelect" class="form-control" [(ngModel)]="filteredCategory" />
+
+    </div>
+
+   
+
+ 
+
+  <table class="table">
+
+    <thead>
+
+         <tr>
+
+           <th>productId</th>
+
+           <th>productName</th>
+
+           <th>productPrice</th>
+
+           <th>productSeller</th>
+
+           <th>productCategory</th>
+
+           <th></th>
+
+           <th></th>
+
+         </tr>
+
+    </thead>
+
+    <tbody class="text-center">
+
+
+         <tr *ngFor="let productd of products | productfilter:filteredCategory">
+
+            <td style="color: blue;">{{productd['productId']}}</td>
+
+            <td style="color: yellow;">{{productd['productName']}}</td>
+
+            <td style="color: yellow;">{{productd['productPrice']}}</td>
+
+            <td style="color: yellow;">{{productd['productSeller']}}</td>
+
+            <td style="color: yellow;">{{productd['productCategory']}}</td>
+
+
+           
+
+         </tr>
+
+    </tbody>
+
+  </table>
+
+ 
+
+</div>
+
+<ng-template #err >
+
+<p class="text-danger">Error fetching data from backend</p>
+
+</ng-template>

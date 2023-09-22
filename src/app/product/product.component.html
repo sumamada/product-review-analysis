@@ -1,0 +1,75 @@
+<h2 class="text-center" style="color: blue;">List of Products</h2>
+<div *ngIf="products;else err" class="container prod-table">
+
+    <div class="headers">
+     <h2 class="table-title">Product Management</h2>
+     <button class="btn add" (click)="openForm()">Addproduct</button>
+    </div>
+<div>
+ <input type="text">
+
+</div>
+  <table class="table">
+    <thead>
+         <tr>
+           <th>productId</th>
+           <th>productName</th>
+           <th>productPrice</th>
+           <th>productSeller</th>
+           <th>productCategory</th>
+           <th></th>
+           <th></th>
+         </tr>
+    </thead>
+    <tbody class="text-center">
+
+         <tr *ngFor="let productd of products">
+
+            <td>{{productd['productId']}}</td>
+            <td>{{productd['productName']}}</td>
+            <td>{{productd['productPrice']}}</td>
+            <td>{{productd['productSeller']}}</td>
+            <td>{{productd['productCategory']}}</td>
+            <td><button class="btn btn-primary" (click)="openForm1(productd)">Edit</button></td>
+            <td><button class="btn btn-danger"  (click)="deleteProduct(productd)">Delete</button></td>
+         </tr>
+    </tbody>
+  </table>
+
+
+
+</div>
+<ng-template #err >
+<p class="text-danger">Error fetching data from backend</p>
+</ng-template>
+
+
+<div class="form-wrapper" *ngIf="showForm">
+
+    <div class="product-form">
+        <h2 class="text-center text-info">{{formHeader}}</h2>
+       <form>
+        <div class="group">
+          <label for="productname">Productname:</label>
+          <input type="text" class="form-control" [(ngModel)]="productName" [ngModelOptions]="{standalone:true}" id="productName" required >
+        </div>
+        <div class="group">
+            <label for="productprice" class="labelcls">Productprice:</label>
+            <input type="number" class="form-control" [(ngModel)]="productPrice" [ngModelOptions]="{standalone:true}" id="productPrice" required min="1000">
+          </div>
+          <div class="group">
+            <label for="productseller">Productseller:</label>
+            <input type="text" class="form-control" [(ngModel)]="productSeller" [ngModelOptions]="{standalone:true}" id="productSeller" required >
+          </div>
+          <div class="group">
+            <label for="productcategory" class="labelcls">Productcategory:</label>
+            <input type="text" class="form-control"  [(ngModel)]="productCategory" [ngModelOptions]="{standalone:true}" id="productCategory" required min="1">
+          </div>
+          <div>
+            <button class="btn btn-primary action" (click)="saveProduct()">Save changes</button>
+            <button class="btn btn-primary action" (click)="closeForm()">cancel</button>
+          </div>
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,75 @@
+.prod-table{
+
+    width:900px;
+    padding:20px 25px;
+    background-color: white;
+    margin:30px 0;
+    border-radius:3px;
+}
+.headers{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:16px 30px;
+   background-color: #435d7d;
+   color:white;
+}
+.add{
+    background-color: #5cb85c;
+    color:white;
+}
+th{
+    text-align: center;
+}
+
+.form-wrapper{
+    align-items: space-between;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    background-color: white;
+    z-index: 100;
+}
+.product-form{
+
+    background-color: white;
+    width: 50%;
+    padding:20px 50px;
+    border-radius: 5px;
+}
+.form-control{
+    padding: 5px;
+    width:60%;
+}
+.group{
+
+    display: flex;
+    margin-right: 30px;
+    align-items: space-between;
+    margin-bottom: 15px;
+}
+.group label{
+
+    width:70px;
+    line-height: 40px;
+    height:40px;
+   
+    margin-right:65px ;
+}
+.action{
+
+    display: flex;
+    justify-content: center;
+    gap:100px;
+    margin:20px;
+    
+}
+.labelcls{
+    margin-bottom:5px;
+    display: block;
+}

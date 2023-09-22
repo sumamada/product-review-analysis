@@ -1,0 +1,33 @@
+
+<h2 class="text-center mt-5" style="color: blue;">Fill the Details to get Registered</h2>
+<div class="container mt-5">
+    <div class="form-area">
+<form >
+    <div class="form-group">
+        <label>FullName:</label>
+      <input type="text" placeholder="Enter Your Fullname" class="form-control w-50 m-2" [(ngModel)]="name" [ngModelOptions]="{standalone:true}" id="name" #un="" required minlength="6">
+       
+     </div>
+
+  <div class="form-group">
+      <label>Username:</label>
+ <input type="text" placeholder="Enter Your Username" class="form-control w-50 m-2" [(ngModel)]="username" [ngModelOptions]="{standalone:true}" id="username" #un="" required minlength="6">
+  
+  </div>
+    <div class="form-group">
+    <label>Password:</label>
+    <input type="password" placeholder="Enter Your Password" class="form-control w-50 m-2" [(ngModel)]="password" [ngModelOptions]="{standalone:true}" id="password" #un="ngModel" required minlength="6">
+
+     
+    
+    </div>
+    <div class="form-group">
+        <label>Address:</label>
+        <input type="text" placeholder="Enter Your mobileNo" class="form-control w-50 m-2" [(ngModel)]="address" [ngModelOptions]="{standalone:true}" id="address" required>
+     </div>
+    <div class="form-group">
+            <label>Mobilenumber:</label>
+       <input type="text" placeholder="Enter Your Address" class="form-control w-50 m-2" [(ngModel)]="mobileNo" [ngModelOptions]="{standalone:true}" id="mobileNo" required>
+     </div>
+       <a href="/udash"><button type="submit" class="btn btn-primary mt-2 " routerLink="udash" routerLinkActive="router-link-active" (click)="register()" >Register</button></a>
+</form>

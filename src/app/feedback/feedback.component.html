@@ -1,0 +1,42 @@
+<h2 style="color: blueviolet;" class="text-center">List of Feedbacks</h2>
+<div *ngIf="feedbacks;else err" class="container prod-table">
+
+    <div class="headers">
+     <h2 style="color: blue;" class="table-title">Feedback Management</h2>
+     <!-- <button class="btn add" (click)="openForm()">Addproduct</button> -->
+    </div>
+
+
+
+  <table class="table">
+    <thead>
+         <tr>
+           <th>feedbackId</th>
+           <th>feedback</th>
+
+           <th>userId</th>
+           <th>productId</th>
+           
+           
+         </tr>
+    </thead>
+    <tbody class="text-center">
+
+         <tr *ngFor="let feedbackd of feedbacks">
+
+          <td style="color: blue;">{{feedbackd.feedbackId}}</td>
+
+          <td style="color: darkblue;">{{feedbackd.feedback}}</td>        
+
+          <td style="color: deeppink;">{{feedbackd.user.userId}}</td>
+
+          <td style="color: deeppink;">{{feedbackd.product.productId}}</td>
+        
+            <td><button class="btn btn-danger"  (click)="deleteFeedback(feedbackd)">Delete</button></td>
+         </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #err >
+    <p class="text-danger">Error fetching data from backend</p> 
+</ng-template>
